@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import questionCard from '../../tandem.json';
 import CardComponent from '../component/CardComponent';
 import '../../asset/css/Home.css';
-import Shelf from '../component/Shelf';
 
 
 function QuestionCard() {
@@ -14,7 +13,8 @@ function QuestionCard() {
     }
 
     const questionCards = () => {
-        return questionCard.map(card => <CardComponent 
+        return questionCard.map(card => <CardComponent
+            key={card.id} 
             question={card.question} 
             correct={card.correct} 
             incorrect={card.incorrect}

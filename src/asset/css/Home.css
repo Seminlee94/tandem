@@ -1,18 +1,60 @@
 .home {
     display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /* height: 100vh; */
+    /* border-style: solid; */
 }
 
 .home-score {
-    font-size: 30px;
-    font-weight: bold;
     width: 300px;
     height: 500px;
     border-style: solid;
+    border-width: thin;
+    transform: translateY(30%);
 }
 
-/* .home-question {
-    transform: translateX(30%);
-} */
+.home-question {
+    transform: translate(50%, 20%);
+}
+
+.home-score-top {
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    border-bottom-style: dashed;
+    border-bottom-width: thin;
+}
+
+.answered-card {
+    width: 200px;
+    height: 500px;
+    transform: translate(385%, 30%);
+    transition-duration: 500ms;
+    border-style: solid;
+    border-width: thin;
+    float: right;
+}
+
+.answered-arrow {
+    float: left;
+    transform: translateX(-120%);
+}
+
+.hide-answered-card {
+    /* background-color: black; */
+    width: 200px;
+    height: 500px;
+    border-style: solid;
+    border-width: thin;
+    float: right;
+    transform: translate(465%, 30%);
+    transition-duration: 500ms;
+}
+
+
 
 /* .home-question-card {
     width: 60%;
