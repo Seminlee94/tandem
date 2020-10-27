@@ -11,17 +11,17 @@ class Shelf extends React.Component {
       displayIndex: this.state.displayIndex + 1,
     });
   };
-  prev = (event) => {
-    this.setState({
-      displayIndex: this.state.displayIndex - 1,
-    });
-  };
+  // prev = (event) => {
+  //   this.setState({
+  //     displayIndex: this.state.displayIndex - 1,
+  //   });
+  // };
 
   render() {
     const questionArray = this.props.question;
     return (
       <div className="question-item-card">
-        <div className="question-shelf-button">
+        {/* <div className="question-shelf-button">
           {this.state.displayIndex !== 0 && (
             <MoreButton moreItems={this.prev}>
               <svg
@@ -39,12 +39,12 @@ class Shelf extends React.Component {
               </svg>
             </MoreButton>
           )}
-        </div>
+        </div> */}
         {questionArray.slice(
           this.state.displayIndex,
           this.state.displayIndex + 1
         )}
-        <div className="question-shelf-button">
+        {/* <div className="question-shelf-button">
           {questionArray.length > this.state.displayIndex + 1 && (
             <MoreButton moreItems={this.next}>
               <svg
@@ -60,7 +60,7 @@ class Shelf extends React.Component {
               </svg>
             </MoreButton>
           )}
-        </div>
+        </div> */}
       </div>
     );
   }
