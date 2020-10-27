@@ -1,0 +1,51 @@
+.card {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px;
+}
+
+.card-ol li {
+    padding: 5px;
+    cursor: grab;
+}
+
+.card-answer {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 150px;
+    height: 100px;
+    width: 40%;
+    cursor: grab;
+}
+
+.card-explanation {
+    font-size: 20px;
+    margin-top: 15px;
+    height: 183px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 7px;
+}
+
+.question-item-card {
+    display: flex;
+}
+
+.question-shelf-button {
+    width: 60px;
+    height: 60px;
+}
+
+.question-shelf-button svg {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.question-shelf-button svg:hover {
+    transform: scale(1.1);
+    /* animation-duration: 500ms; */
+}
