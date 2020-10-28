@@ -34,6 +34,8 @@ export class Login extends Component {
                 localStorage.setItem("data", data)
                 localStorage.setItem("user", data.user)
                 localStorage.setItem("username", data.user.username)
+                localStorage.setItem("name", data.user.name)
+                localStorage.setItem("userId", data.user.id)
                 console.log(data.user.username)
                 this.setState( () => ({ user: data.user }), () => this.props.history.push('/'))
             })

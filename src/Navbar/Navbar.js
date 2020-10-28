@@ -13,6 +13,8 @@ class Navbar extends React.Component {
         localStorage.removeItem("data")
         localStorage.removeItem("user")
         localStorage.removeItem("username")
+        localStorage.removeItem("name")
+        localStorage.removeItem("userId")
         this.props.history.push('/login')
     };
 

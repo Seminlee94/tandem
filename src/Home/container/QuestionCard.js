@@ -1,56 +1,65 @@
-import React, { useState } from 'react';
-import questionCard from '../../tandem.json';
+import React from 'react';
 import CardComponent from '../component/CardComponent';
 import '../../asset/css/Home.css';
 
 
-function QuestionCard() {
+class QuestionCard extends React.Component {
 
-    const [displayIndex, setDisplayIndex] = useState(0)
-
-    const next = (event) => {
-        setDisplayIndex(displayIndex + 1)
+    state = {
+        displayIndex: 0
     }
 
-    const questionCards = () => {
-        return questionCard.map(card => <CardComponent
-            key={card.id} 
+    next = (event) => {
+        this.setState({ displayIndex: this.state.displayIndex+1 }) 
+    }
+
+    questionCards = () => {
+        return this.props.unansweredArray.map(card => <CardComponent
+            key={card.id}
+            id={card.id}
             question={card.question} 
             correct={card.correct} 
             incorrect={card.incorrect}
-            next={next}
+            next={this.next}
+            changeQuestionArray={this.props.changeQuestionArray}
             />
         )
     }
 
-    let allQuestion = questionCards()
-    let shuffleQuestion = shuffleArray(allQuestion)
-
-    return (
-        <div className="home-question">
-            {shuffleQuestion.slice(
-                displayIndex,
-                displayIndex + 1
-             )}
-            {/* <div className="home-question-card">
-                {shuffleQuestion[0]}   
-            </div> */}
-            {/* <div className="home-question-shelf"> */}
-                {/* <Shelf question={questionCards()} /> */}
-            {/* </div> */}
-        </div>
-    )
-}
-
-function shuffleArray(array) {
+    shuffleArray = (array) => {
     
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-        
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+            
+        }
+        return array
     }
-    return array
+
+
+    render() {
+        let allQuestion = this.questionCards()
+        let shuffleQuestion = this.shuffleArray(allQuestion)
+
+        return (
+            <div className="home-question">
+                {shuffleQuestion.slice(
+                    this.state.displayIndex,
+                    this.state.displayIndex + 1
+                 )}
+                {/* <div className="home-question-card">
+                    {shuffleQuestion[0]}   
+                </div> */}
+                {/* <div className="home-question-shelf"> */}
+                    {/* <Shelf question={questionCards()} /> */}
+                {/* </div> */}
+            </div>
+        )
+
+    }
 }
+
+
 
 
 export default QuestionCard

@@ -1,11 +1,16 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 
-const MoreButton = (props) => {
+function MoreButton(props){
+
+  const clickFunction = () => {
+    props.moreItems();
+    props.changeQuestionArray(props.card.id)
+  }
+
   return (
     <Button
-      // variant="outline-info"
-      onClick={props.moreItems}
+      onClick={()=>clickFunction()}
       style={{
         border: 0,
         alignSelf: "center",
@@ -15,6 +20,7 @@ const MoreButton = (props) => {
       {props.children}
     </Button>
   );
-};
+}
+
 
 export default MoreButton;

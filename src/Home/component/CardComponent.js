@@ -28,7 +28,6 @@ function CardComponent(props) {
     let options = [...incorrect, props.correct]
     let shuffleOptions = shuffleArray(options)
 
-    
 
     return (
         <>
@@ -59,7 +58,7 @@ function CardComponent(props) {
                     <div className="card-explanation">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                     <div className="question-shelf-button" onClick={handleClickBack}>
 
-                        <MoreButton  moreItems={props.next}>
+                        <MoreButton card={props} moreItems={props.next} changeQuestionArray={props.changeQuestionArray}>
                             <svg
                                 viewBox="0 0 16 16"
                                 className="bi bi-arrow-right-circle-fill"

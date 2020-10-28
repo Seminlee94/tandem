@@ -49,7 +49,6 @@
 }
 
 .hide-answered-card {
-    /* background-color: black; */
     width: 200px;
     height: 500px;
     border-style: solid;
@@ -59,9 +58,17 @@
     transition-duration: 500ms;
 }
 
+.answered-card-top {
+    padding: 5px 0 5px 0;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border-bottom-style: dashed;
+    border-bottom-width: thin;
+}
 
-
-/* .home-question-card {
-    width: 60%;
-    height: 300px;
-} */
+.answered-card-empty {
+    text-align: center;
+    line-height: 30px;
+    margin-top: 50px;
+}

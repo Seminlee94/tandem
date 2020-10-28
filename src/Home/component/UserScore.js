@@ -5,7 +5,6 @@ class UserScore extends React.Component {
 
     render() {
         
-        console.log(this.props.id)
         return(
             <div className="user-info">
                 {this.props.id===0 ? <img className="user-icon" src="https://www.flaticon.com/svg/static/icons/svg/3459/3459490.svg" alt="first-place"/> : null }

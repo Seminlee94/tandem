@@ -1,26 +1,47 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../../asset/css/Home.css';
 import * as biIcons from "react-icons/bi"
 
 
-function AnsweredCard() {
-    const [clickArrow, setClickArrow] = useState(false)
+class AnsweredCard extends React.Component {
 
-    const arrowClicked = () => {
-        setClickArrow(!clickArrow)
+    state = {
+        clickArrow: false
     }
 
-    return (
+    arrowClicked = () => {
+        this.setState({ clickArrow: !this.state.clickArrow })
+    }
 
-        <>
-            <div className={clickArrow ? "hide-answered-card" : "answered-card"} >
-                <div className="answered-arrow" onClick={arrowClicked}>
-                    {clickArrow ? <biIcons.BiArrowToLeft /> : <biIcons.BiArrowToRight /> }
-                </div>
-                <div className="answered-card-top">answered cards</div>
-            </div >
-        </>
-    )
+    questionCards = () => {
+        return this.props.answeredArray.map(card => console.log(card))
+    }
+
+    render() {
+
+        return (
+    
+            <>
+                <div className={this.state.clickArrow ? "hide-answered-card" : "answered-card"} >
+                    <div className="answered-arrow" onClick={() => this.arrowClicked()}>
+                        {this.state.clickArrow ? <biIcons.BiArrowToLeft /> : <biIcons.BiArrowToRight /> }
+                    </div>
+                    <div className="answered-card-top">answered cards</div>
+                    <div className="answered-card-bottom">
+                        {this.props.answeredArray.length > 0 
+                            ? 
+                                this.questionCards() 
+                            : 
+                                <div className="answered-card-empty">
+                                    You have not answered any questions yet!
+                                </div>
+                        }
+                    </div>
+                </div >
+            </>
+        )
+    }
+
 }
 
 export default AnsweredCard
