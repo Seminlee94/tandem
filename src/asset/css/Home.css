@@ -14,6 +14,11 @@
     border-style: solid;
     border-width: thin;
     transform: translateY(30%);
+    overflow-y: scroll;
+}
+
+.home-score-user {
+    padding: 10px;
 }
 
 .home-question {

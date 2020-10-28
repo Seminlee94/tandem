@@ -10,7 +10,8 @@ export class Login extends Component {
  
     state = {
         username: "",
-        password: ""
+        password: "",
+        user: {}
     }
 
 
@@ -30,7 +31,10 @@ export class Login extends Component {
             .then(res => res.json())
             .then(data => {
                 localStorage.setItem("token", data.jwt)
-                localStorage.setItem("user", data)
+                localStorage.setItem("data", data)
+                localStorage.setItem("user", data.user)
+                localStorage.setItem("username", data.user.username)
+                console.log(data.user.username)
                 this.setState( () => ({ user: data.user }), () => this.props.history.push('/'))
             })
     }

@@ -1,0 +1,21 @@
+.user-info {
+    display: flex;
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px 0px 10px 0px;
+}
+
+.user-name {
+    width: 82%;
+}
+
+.user-score {
+    width: 18%;
+    right: 0;
+}
+
+.user-icon {
+    width: 30px;
+    height: 30px;
+}

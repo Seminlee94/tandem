@@ -5,20 +5,24 @@ import AnsweredCard from './container/AnsweredCard'
 import '../asset/css/Home.css'
 
 
-function Home() {
 
-
-    return(
+class Home extends React.Component {
+    
+    render(){
+        // let a = localStorage.getItem('username')
         
-        <div className="home">
-
-            <ScoreBoard />
-            <QuestionCard />
-            <AnsweredCard />
+            return(
+                
+                <div className="home">
         
-        </div>
-
-    )
+                    <ScoreBoard />
+                    <QuestionCard />
+                    <AnsweredCard />
+                
+                </div>
+        
+            )
+    }
 }
 
 export default Home
